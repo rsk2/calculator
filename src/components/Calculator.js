@@ -152,17 +152,22 @@ class Calculator extends React.Component {
                 <button onClick={this.addToDisplay}>3</button>
                 <button onClick={this.addToDisplay}>4</button>
                 <button onClick={this.addToDisplay}>5</button>
+                <button onClick={this.clearDisplay}>C</button>
                 <br/>
                 <button onClick={this.addToDisplay}>6</button>
                 <button onClick={this.addToDisplay}>7</button>
                 <button onClick={this.addToDisplay}>8</button>
                 <button onClick={this.addToDisplay}>9</button>
                 <button onClick={this.addToDisplay}>0</button>
+                <button onClick={this.deleteLastChar}> &#8592; </button>
                 <br/>
-                <button onClick={this.clearDisplay}>C</button>
-                <button onClick={this.deleteLastChar}>D</button>
+                
+                
                 <button onClick={this.gcd}>GCD</button>
-                <button onClick={this.lcm}>LCM</button>
+                <button onClick={this.lcm}>LCM</button>{
+                //<button onClick={this.lcm}>Prime?</button>
+                //<button onClick={this.lcm}>Perfect Square?</button>
+                }
                 <button onClick={this.result}>=</button>
             </div>
         )
