@@ -1,0 +1,13 @@
+node_modules
+public/public
+public/*.map
+public/index.html
+public/cynaptx-ui-*.js
+cynaptx-ui.css
+docs/
+*.jsb
+.eslintignore
+package-lock.json
+npm-debug.log
+deploy*
+deploy.cmd
