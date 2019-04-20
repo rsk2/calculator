@@ -150,7 +150,7 @@ class Calculator extends React.Component {
 
     render() {
         return (
-            <div className="calculator" style={{marginTop: 5 +'em', marginLeft: 20 + 'em'}}>
+            <div className="calculator" >
             
                 <input type="text" value={this.state.displayText} className="display"
                  readOnly></input>
@@ -179,13 +179,12 @@ class Calculator extends React.Component {
                     //<button onClick={this.lcm}>Prime?</button>
                     //<button onClick={this.lcm}>Perfect Square?</button>
                     }
-                    <button onClick={this.result} style={{width:26.5+'%', textAlign:'center'}}>=</button>
+                    <button onClick={this.result} style={{width:63+'px', textAlign:'center'}}>=</button>
                     </div>
-                  
+                   
                 </div>
-                <input type="text" value={this.state.historyText}
-        
-                     readOnly className="history"></input>
+                <textarea rows="1" value={this.state.historyText} readOnly
+                     className="history"></textarea>
             </div>
         )
     }

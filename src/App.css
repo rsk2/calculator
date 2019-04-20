@@ -157,24 +157,40 @@ text-align: cen
 }
 
 .calculator > .display {
-  width: 25%;
+  width:250px;
   font-size: 2.6em;
   text-align: right;
   margin-bottom:1em
  }
 
- .calculator > .inputBoxes {
-   width: 25%
+ .calculator  {
+    margin: 1em;
+    text-align: center
+    
+   
  }
 
  .inputBoxes.row {
    clear: both;
  }
  .calculator > .history {
-  width: 25%;
+  width:250px;
   font-size: 1.6em;
   text-align: left;
   margin-top:1em;
   background-color: lightyellow;
   border: none
  }
+
+ .container {
+  margin: auto;
+  max-width: 800px;
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+ 
+
+  .container {
+    background-color: lightblue ;
+  }
+}
