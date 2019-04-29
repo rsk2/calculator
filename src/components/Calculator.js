@@ -179,7 +179,7 @@ class Calculator extends React.Component {
                     //<button onClick={this.lcm}>Prime?</button>
                     //<button onClick={this.lcm}>Perfect Square?</button>
                     }
-                    <button onClick={this.result} style={{width:63+'px', textAlign:'center'}}>=</button>
+                    <button onClick={this.result} style={{width:1.28+'em'}}>=</button>
                     </div>
                    
                 </div>
