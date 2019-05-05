@@ -133,9 +133,13 @@ text-align: cen
     text-align: center;
  }
 
- .inputBoxes.row {
-   clear: both;
+ .inputBoxes {
+   max-width: 250px;
+   margin:auto;
+   background-color: white
  }
+
+
 
  .calculator > .history {
   width:250px;
