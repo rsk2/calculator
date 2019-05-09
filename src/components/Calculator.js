@@ -45,8 +45,11 @@ class Calculator extends React.Component {
 
     deleteLastChar(event) {
         this.setState((prevState) => {
+            let newDisplayText = "0"
+            if(prevState.displayText.length > 1)
+                newDisplayText = prevState.displayText.slice(0, -1)
             return { 
-            displayText : prevState.displayText.slice(0, -1)
+            displayText : newDisplayText
             }
         })
     }
