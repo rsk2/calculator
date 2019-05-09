@@ -156,7 +156,7 @@ class Calculator extends React.Component {
                 prevState.displayText = 0
                 let variableTwo = parseInt(prevState.displayText)  
                 if(prevState.action === "gcd"){
-                let result = this.calculateGCD(variableOne,variableTwo)
+                let result = String(this.calculateGCD(variableOne,variableTwo))
                 return{
                     variableOne: 0,
                     displayText : result,
@@ -167,7 +167,7 @@ class Calculator extends React.Component {
 
                 }
                 else if(prevState.action == "lcm"){      
-                let result = this.calculateLCM(variableOne,variableTwo)
+                let result = String(this.calculateLCM(variableOne,variableTwo))
                 return{
                     variableOne: 0,
                     displayText : result,
@@ -177,7 +177,7 @@ class Calculator extends React.Component {
                     }
                 }
                 else if(prevState.action == "divide"){      
-                    let result = this.calculateDivision(variableOne,variableTwo)
+                    let result = this.calculateDivision(variableOne,variableTwo).map(String)
                     this.historyRef.current.rows = "2"
                     return{
                         variableOne: 0,
