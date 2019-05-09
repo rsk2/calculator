@@ -143,8 +143,6 @@ class Calculator extends React.Component {
     }
 
     calculateDivision(variableOne,variableTwo){
-        if (variableTwo == 0)
-             return [0,0]
         let quotient = 1
         let remainder = 0
         if (variableOne % variableTwo === 0) {
@@ -187,17 +185,19 @@ class Calculator extends React.Component {
                     historyText: prevState.historyText + " " + prevState.displayText + " = " + result
                     }
                 }
-                else if(prevState.action == "divide"){      
-                    let result = this.calculateDivision(variableOne,variableTwo).map(String)
-                    this.historyRef.current.rows = "2"
+                else if(prevState.action == "divide"){
                     let historyText = ""
-                    if (result[0] == "0" && result[1] == "0")
+                    let result = ["0","0"]
+                    if (variableTwo === 0)     
                         historyText = prevState.historyText  + prevState.displayText + 
-                                        ": Division by zero"
-                    else
+                                        ": Division by zero" 
+                    else {
+                        if(variableOne)
+                            result = this.calculateDivision(variableOne,variableTwo).map(String)
+                        this.historyRef.current.rows = "2"                        
                         historyText = prevState.historyText + prevState.displayText
-                                       + " : Quotient = " + result[0] + ", Remainder = " + result[1]
-
+                                       + ": Quotient = " + result[0] + ", Remainder = " + result[1]
+                    }
                     return{
                         variableOne: 0,
                         displayText : result[0],
