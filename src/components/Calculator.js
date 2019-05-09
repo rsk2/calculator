@@ -5,11 +5,11 @@ class Calculator extends React.Component {
     constructor() {
         super()
         this.state ={
-            displayText:"",
-            variableOne: 0,
-            variableTwo: 0,
+            displayText:"0",
+            variableOne: "0",
+            variableTwo: "0",
             action:"", 
-            clear: false,
+         //   clear: false,
             historyText:""
         }
         this.historyRef = React.createRef()
@@ -25,19 +25,21 @@ class Calculator extends React.Component {
     addToDisplay(event) {
         const {innerText} = event.target
         this.setState((prevState) => {
-            if(prevState.clear)
+            if (parseInt(prevState.displayText) === 0)
+                prevState.displayText = ""
+          /*  if(prevState.clear)
                 return{
                     displayText: innerText,
                     clear: false
-                }
-            else if(prevState.displayText.length < 10)  
+                } */
+            if(prevState.displayText.length < 10)  
                 return { displayText : prevState.displayText + innerText}
     })
     }
 
     clearDisplay(event) {
         this.setState({ 
-            displayText : ""
+            displayText : "0"
         })
     }
 
@@ -51,6 +53,8 @@ class Calculator extends React.Component {
           
     gcd(event) {
         this.setState((prevState) => { 
+            if (!prevState.displayText )
+                prevState.displayText = "0"
             return{
             variableOne: prevState.displayText,
             displayText : "",
@@ -61,7 +65,9 @@ class Calculator extends React.Component {
     }
 
     lcm(event) {
-        this.setState((prevState) => { 
+        this.setState((prevState) => {
+            if (!prevState.displayText )
+                prevState.displayText = "0" 
             return{
             variableOne: prevState.displayText,
             displayText : "",
@@ -73,6 +79,8 @@ class Calculator extends React.Component {
 
     divide(event) {
         this.setState((prevState) => { 
+            if (!prevState.displayText )
+                prevState.displayText = "0" 
             return{
             variableOne: prevState.displayText,
             displayText : "",
@@ -160,7 +168,7 @@ class Calculator extends React.Component {
                 return{
                     variableOne: 0,
                     displayText : result,
-                    clear: true,
+                   // clear: true,
                     action: "",
                     historyText: prevState.historyText + " " + prevState.displayText + " = " + result
                     }
@@ -171,7 +179,7 @@ class Calculator extends React.Component {
                 return{
                     variableOne: 0,
                     displayText : result,
-                    clear: true,
+                  //  clear: true,
                     action: "",
                     historyText: prevState.historyText + " " + prevState.displayText + " = " + result
                     }
@@ -182,7 +190,7 @@ class Calculator extends React.Component {
                     return{
                         variableOne: 0,
                         displayText : result[0],
-                        clear: true,
+                     //   clear: true,
                         action: "",
                         historyText: prevState.historyText + prevState.displayText
                                      + " Quotient:" + result[0] + " Remainder:" + result[1]
