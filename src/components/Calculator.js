@@ -189,7 +189,8 @@ class Calculator extends React.Component {
                     this.historyRef.current.rows = "2"
                     let historyText = ""
                     if (result[0] == "0" && result[1] == "0")
-                        historyText = prevState.historyText + ": Division by zero"
+                        historyText = prevState.historyText  + prevState.displayText + 
+                                        ": Division by zero"
                     else
                         historyText = prevState.historyText + prevState.displayText
                                        + " : Quotient = " + result[0] + ", Remainder = " + result[1]
