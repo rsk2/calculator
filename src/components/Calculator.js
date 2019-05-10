@@ -9,7 +9,7 @@ class Calculator extends React.Component {
             variableOne: "0",
             variableTwo: "0",
             action:"", 
-         //   clear: false,
+            forgetDisplayText: false,
             historyText:" "
         }
         this.historyRef = React.createRef()
@@ -27,11 +27,11 @@ class Calculator extends React.Component {
         this.setState((prevState) => {
             if (parseInt(prevState.displayText) === 0)
                 prevState.displayText = ""
-          /*  if(prevState.clear)
+            if(prevState.forgetDisplayText)
                 return{
                     displayText: innerText,
-                    clear: false
-                } */
+                    forgetDisplayText: false
+                } 
             if(prevState.displayText.length < 10)  
                 return { displayText : prevState.displayText + innerText}
     })
@@ -173,7 +173,7 @@ class Calculator extends React.Component {
                 return{
                     variableOne: 0,
                     displayText : result,
-                   // clear: true,
+                    forgetDisplayText: true,
                     action: "",
                     historyText: prevState.historyText + " " + prevState.displayText + " = " + result
                     }
@@ -184,7 +184,7 @@ class Calculator extends React.Component {
                 return{
                     variableOne: 0,
                     displayText : result,
-                  //  clear: true,
+                    forgetDisplayText: true,
                     action: "",
                     historyText: prevState.historyText + " " + prevState.displayText + " = " + result
                     }
@@ -204,7 +204,7 @@ class Calculator extends React.Component {
                     return{
                         variableOne: 0,
                         displayText : result[0],
-                     //   clear: true,
+                        forgetDisplayText: true,
                         action: "",
                         historyText: historyText
                         }

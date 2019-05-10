@@ -120,6 +120,14 @@ text-align: cen
   background: rgb(255, 255, 255);
 }
 
+button:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c2c2c2;
+     -moz-box-shadow: inset 0px 0px 5px #c2c2c2;
+          box-shadow: inset 0px 0px 5px #c2c2c2;
+   outline: none;
+}
+
 .calculator > .display {
   width:250px;
   font-size: 2.6em;
