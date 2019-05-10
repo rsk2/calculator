@@ -10,7 +10,7 @@ class Calculator extends React.Component {
             variableTwo: "0",
             action:"", 
          //   clear: false,
-            historyText:""
+            historyText:" "
         }
         this.historyRef = React.createRef()
         this.addToDisplay = this.addToDisplay.bind(this)
@@ -52,6 +52,10 @@ class Calculator extends React.Component {
             displayText : newDisplayText
             }
         })
+    }
+
+    componentDidMount() {
+        
     }
           
     gcd(event) {
@@ -156,9 +160,9 @@ class Calculator extends React.Component {
         return [quotient,remainder]
     }
 
+   
+
     result(event) {
-        if (this.historyRef.current.rows != "1")
-            this.historyRef.current.rows = "1"
         this.setState((prevState) => {
             let variableOne = parseInt(prevState.variableOne)
             if (prevState.displayText === "")
@@ -193,8 +197,7 @@ class Calculator extends React.Component {
                                         ": Division by zero" 
                     else {
                         if(variableOne)
-                            result = this.calculateDivision(variableOne,variableTwo).map(String)
-                        this.historyRef.current.rows = "2"                        
+                            result = this.calculateDivision(variableOne,variableTwo).map(String)                  
                         historyText = prevState.historyText + prevState.displayText
                                        + ": Quotient = " + result[0] + ", Remainder = " + result[1]
                     }
@@ -249,8 +252,9 @@ class Calculator extends React.Component {
                     </div>
                    
                 </div>
-                <textarea rows="1" value={this.state.historyText} readOnly
-                     className="history" ref={this.historyRef}></textarea>
+                <textarea  value={this.state.historyText} readOnly 
+                     className="history" ref={this.historyRef} 
+                     rows={Math.ceil(this.state.historyText.length/20)}></textarea>
             </div>
         )
     }
