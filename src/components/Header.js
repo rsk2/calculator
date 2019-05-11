@@ -6,7 +6,7 @@ function Header() {
       //  <p>Meme Generator</p>
     //</header>)
     return (<header>
-            <p>LCM/GCD Calculator</p>
+            <p>Special Calculator</p>
         </header>)
 }
 export default Header

@@ -220,31 +220,37 @@ class Calculator extends React.Component {
                  readOnly></input>
                  <br/>
                  <div className="inputBoxes">
-                    <div className="row">
+                    <div className="row1">
                         <button onClick={this.addToDisplay}>1</button>
                         <button onClick={this.addToDisplay}>2</button>
                         <button onClick={this.addToDisplay}>3</button>
                         <button onClick={this.addToDisplay}>4</button>
                         <button onClick={this.addToDisplay}>5</button>
-                        <button onClick={this.clearDisplay}>C</button>
+                        <button onClick={this.clearDisplay} style={{backgroundColor:"#ff3333", color:"white"}}>
+                            C</button>
                     </div>
-                    <div className="row">
+                    <div className="row2">
                         <button onClick={this.addToDisplay}>6</button>
                         <button onClick={this.addToDisplay}>7</button>
                         <button onClick={this.addToDisplay}>8</button>
                         <button onClick={this.addToDisplay}>9</button>
                         <button onClick={this.addToDisplay}>0</button>
-                        <button onClick={this.deleteLastChar}> &#8592; </button>
+                        <button onClick={this.deleteLastChar} style={{backgroundColor:"#fc33ff", color:"white"}}> 
+                            &#8592; </button>
                     </div>
                     
-                    <div className="row">
-                        <button onClick={this.gcd}>GCD</button>
-                        <button onClick={this.lcm}>LCM</button>
-                        <button onClick={this.divide}> / </button>
-                        <button onClick={this.result} >=</button>
-                    </div>
-                    <div className = "row">
+                    <div className="row3">
+                        <button onClick={this.gcd} style={{backgroundColor:"#33fff9"}}>
+                            GCD</button>
+                        <button onClick={this.lcm} style={{backgroundColor:"#33ff90"}}>
+                            LCM</button>
+                        <button onClick={this.divide} style={{backgroundColor:"#ffbe33"}}> 
+                            / </button>
                        
+                    </div>
+                    <div className = "row4">
+                    <button onClick={this.result} style={{backgroundColor:"#338dff", color:"white"}}>
+                            =</button>
                         {
                            //  <button>Prime?</button>
                         //<button onClick={}>Perfect Square?</button>

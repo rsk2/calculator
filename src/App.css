@@ -111,7 +111,7 @@ font-size: 25px;
 text-align: cen
 }
 
-.calculator > .inputBoxes > .row > button {
+button {
   border: none;
   font-family: VT323, monospace;
   font-size: 2.3em;
@@ -122,9 +122,9 @@ text-align: cen
 
 button:active {
   background: #e5e5e5;
-  -webkit-box-shadow: inset 0px 0px 5px #c2c2c2;
-     -moz-box-shadow: inset 0px 0px 5px #c2c2c2;
-          box-shadow: inset 0px 0px 5px #c2c2c2;
+  -webkit-box-shadow: inset 0px 0px 5px #020202;
+     -moz-box-shadow: inset 0px 0px 5px #020202;
+          box-shadow: inset 0px 0px 5px #020202;
    outline: none;
 }
 
@@ -144,10 +144,20 @@ button:active {
  .inputBoxes {
    max-width: 250px;
    margin:auto;
-   background-color: white
+   background-color: white;
  }
 
+ .row1 > button, .row2 > button {
+  width:16.66%
+}
 
+.row3 > button {
+  width: 33.33%
+}
+
+.row4 > button {
+  width: 100%
+}
 
  .calculator > .history {
   width:250px;
