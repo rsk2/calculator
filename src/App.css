@@ -129,7 +129,7 @@ button:active {
 }
 
 .calculator > .display {
-  width:250px;
+  width:300px;
   font-size: 2.6em;
   text-align: right;
   margin-bottom:1em
@@ -142,7 +142,7 @@ button:active {
  }
 
  .inputBoxes {
-   max-width: 250px;
+   max-width: 300px;
    margin:auto;
    background-color: white;
  }
@@ -160,7 +160,7 @@ button:active {
 }
 
  .calculator > .history {
-  width:250px;
+  width:300px;
   font-size: 1.6em;
   text-align: left;
   margin-top:1em;

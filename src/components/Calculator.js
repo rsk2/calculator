@@ -260,7 +260,7 @@ class Calculator extends React.Component {
                 </div>
                 <textarea  value={this.state.historyText} readOnly 
                      className="history" ref={this.historyRef} 
-                     rows={Math.ceil(this.state.historyText.length/20)}></textarea>
+                     rows={Math.ceil(this.state.historyText.length/24)}></textarea>
             </div>
         )
     }
