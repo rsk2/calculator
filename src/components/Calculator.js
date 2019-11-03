@@ -1,5 +1,4 @@
-import React from "react"
-import { relative } from "path";
+import React from "react";
 
 class Calculator extends React.Component {
     constructor() {
@@ -18,7 +17,6 @@ class Calculator extends React.Component {
         this.deleteLastChar = this.deleteLastChar.bind(this)
         this.gcd = this.gcd.bind(this)
         this.lcm = this.lcm.bind(this)
-        this.divide = this.divide.bind(this)
         this.result = this.result.bind(this)
     }
 
@@ -84,19 +82,6 @@ class Calculator extends React.Component {
         })
     }
 
-    divide(event) {
-        this.setState((prevState) => { 
-            if (!prevState.displayText )
-                prevState.displayText = "0" 
-            return{
-            variableOne: prevState.displayText,
-            displayText : "",
-            action: "divide",
-            historyText: prevState.displayText + " / "
-            }
-        })
-    }
-
     calculateGCD(variableOne,variableTwo) {
         if (variableOne === 0 || variableTwo === 0)
             return 0
@@ -146,22 +131,6 @@ class Calculator extends React.Component {
         return result
     }
 
-    calculateDivision(variableOne,variableTwo){
-        let quotient = 1
-        let remainder = 0
-        if (variableOne % variableTwo === 0) {
-            quotient = variableOne / variableTwo
-        }
-        else {
-            
-            quotient = Math.floor(variableOne / variableTwo)
-            remainder = variableOne % variableTwo
-        }
-        return [quotient,remainder]
-    }
-
-   
-
     result(event) {
         this.setState((prevState) => {
             let variableOne = parseInt(prevState.variableOne)
@@ -189,26 +158,6 @@ class Calculator extends React.Component {
                     historyText: prevState.historyText + " " + prevState.displayText + " = " + result
                     }
                 }
-                else if(prevState.action == "divide"){
-                    let historyText = ""
-                    let result = ["0","0"]
-                    if (variableTwo === 0)     
-                        historyText = prevState.historyText  + prevState.displayText + 
-                                        ": Division by zero" 
-                    else {
-                        if(variableOne)
-                            result = this.calculateDivision(variableOne,variableTwo).map(String)                  
-                        historyText = prevState.historyText + prevState.displayText
-                                       + ": Quotient = " + result[0] + ", Remainder = " + result[1]
-                    }
-                    return{
-                        variableOne: 0,
-                        displayText : result[0],
-                        forgetDisplayText: true,
-                        action: "",
-                        historyText: historyText
-                        }
-                    }
         })
     }
 
@@ -243,18 +192,11 @@ class Calculator extends React.Component {
                         <button onClick={this.gcd} style={{backgroundColor:"#33fff9"}}>
                             GCD</button>
                         <button onClick={this.lcm} style={{backgroundColor:"#33ff90"}}>
-                            LCM</button>
-                        <button onClick={this.divide} style={{backgroundColor:"#ffbe33"}}> 
-                            / </button>
-                       
+                            LCM</button>                       
                     </div>
                     <div className = "row4">
                     <button onClick={this.result} style={{backgroundColor:"#338dff", color:"white"}}>
                             =</button>
-                        {
-                           //  <button>Prime?</button>
-                        //<button onClick={}>Perfect Square?</button>
-                        }
                     </div>
                    
                 </div>
