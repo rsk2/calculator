@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "react-scripts": "2.1.8"
   },
   "scripts": {
@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -26,6 +26,6 @@
   ],
   "homepage": "https://rsk2.github.io/calculator",
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.1.1"
   }
 }
