@@ -52,13 +52,12 @@ button:active {
  }
 
  .calculator  {
-    max-width: 500px;
     margin: auto;
     text-align: center;
  }
 
  .inputBoxes {
-   max-width: 320px;
+   width: 320px;
    margin:auto;
    background-color: white;
  }
@@ -89,10 +88,15 @@ button:active {
   max-width: 800px;
 }
 
-@media (min-width: 500px) and (max-width: 600px) {
+@media (max-width: 400px) {
  
-
-  .container {
-    background-color: lightblue ;
+  .history {
+    width: 100% !important;
+  }
+  .inputBoxes {
+    width: 100% !important;
+  }
+  .display {
+    width: 100% !important;
   }
 }
