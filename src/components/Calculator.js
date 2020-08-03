@@ -163,8 +163,7 @@ class Calculator extends React.Component {
 
     render() {
         return (
-            <div className="calculator" >
-            
+            <div className="calculator" >           
                 <input type="text" value={this.state.displayText} className="display"
                  readOnly></input>
                  <br/>
