@@ -45,20 +45,21 @@ button:active {
 }
 
 .calculator > .display {
-  width:320px;
-  font-size: 2.6em;
+  width:100%;
+  font-size: 1.7em;
   text-align: right;
-  margin-bottom:1em
- }
+  margin-bottom:1em;
+  box-sizing:border-box;
+}
 
  .calculator  {
-    margin: auto;
+    width: 320px;
     text-align: center;
+    padding:0.5em;
+    margin:auto;
  }
 
  .inputBoxes {
-   width: 320px;
-   margin:auto;
    background-color: white;
  }
 
@@ -75,18 +76,14 @@ button:active {
 }
 
  .calculator > .history {
-  width:320px;
   font-size: 1.6em;
   text-align: left;
   margin-top:1em;
   background-color: lightyellow;
-  border: none
+  width: 100%;
+  box-sizing: border-box;
  }
 
- .container {
-  margin: auto;
-  max-width: 800px;
-}
 
 @media (max-width: 425px) {
  

@@ -165,8 +165,7 @@ class Calculator extends React.Component {
         return (
             <div className="calculator" >           
                 <input type="text" value={this.state.displayText} className="display"
-                 readOnly></input>
-                 <br/>
+                readOnly></input>
                  <div className="inputBoxes">
                     <div className="row1">
                         <button onClick={this.addToDisplay}>1</button>
